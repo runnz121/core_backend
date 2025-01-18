@@ -1,0 +1,132 @@
+logging.level:
+  org.springframework.web.servlet.DispatcherServlet: DEBUG
+  org.springframework.data.elasticsearch: TRACE
+  org.elasticsearch.client.RestClient: TRACE
+  com.zaxxer.hikari.HikariConfig: DEBUG
+  com.zaxxer.hikari: TRACE
+  org.hibernate.SQL: DEBUG
+  org.hibernate.orm.jdbc.bind: TRACE
+  org.springframework.web: DEBUG
+  org.springframework.security: TRACE
+
+
+spring.mvc:
+  log-request-details: true
+
+spring.servlet.multipart.max-request-size: 30MB
+spring.servlet.multipart.max-file-size: 20MB
+
+management.tracing.enabled: true
+management.tracing.sampling.probability: 1.0
+management.endpoints.web.exposure.include: health,info
+management.endpoint.health.show-details: never
+management.health.redis.enabled: false
+management.health.elasticsearch.enabled: false
+
+spring.jpa:
+  open-in-view: false
+  properties:
+    hibernate:
+      default_batch_fetch_size: 30
+      show_sql: true
+      format_sql: true
+      use_sql_comments: true
+      highlight_sql: true
+      dialect: org.hibernate.dialect.MySQLDialect
+  hibernate:
+    ddl-auto: none
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # jpa ?/??? ??
+  generate-ddl: true
+
+core:
+  security:
+    oauth2:
+      jwt-signing-key:
+  client:
+    common:
+      decryptKey: ""
+      encryptKey: "=="
+  datasource:
+    default:
+      write:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url:
+        username:
+        password:
+      read:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url:
+        username:
+        password:
+
+springdoc:
+  swagger-ui:
+    path: /kitten/swagger.html
+    enabled: true
+  api-docs:
+    path: /kitten
+    enabled: true
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            scope:
+              - email
+              - profile
+            redirect-uri:
+          kakao:
+            client-id:
+            client-name: kakao
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            scope:
+              - profile_nickname
+            redirect-uri:
+          naver:
+            client-id:
+            client-secret:
+            client-name: naver
+            authorization-grant-type: authorization_code
+            scope:
+              - email
+              - name
+            redirect-uri:
+          linkedin:
+            client-id:
+            client-secret:
+            client-name: LinkedIn
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            scope:
+              - profile
+              - email
+            redirect-uri:
+        provider:
+          naver:
+            authorization_uri:
+            token_uri:
+            user-info-uri:
+            user_name_attribute: response
+          kakao:
+            authorization_uri:
+            token_uri:
+            user-info-uri:
+            user_name_attribute: id
+          linkedin:
+            authorization-uri:
+            token-uri:
+            user-info-uri:
+            user-name-attribute: id
+
+aws.s3:
+  aws-access-key-id:
+  aws-secret-access-key:
+  aws-bucket-name:

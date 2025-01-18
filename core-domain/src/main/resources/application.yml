@@ -1,0 +1,11 @@
+aws.s3:
+  aws-access-key-id: 
+  aws-secret-access-key: 
+  aws-bucket-name: 
+
+id:
+  gen: 123
+
+core:
+  jpa:
+    querydsl:
