@@ -1,5 +1,5 @@
 ### ERD
-
+![Image](https://github.com/user-attachments/assets/1e8550e9-34e2-408d-a9b8-5105aeb63da9)
 
 
 ### CORE 모듈
