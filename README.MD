@@ -19,7 +19,7 @@
   - 결제관련 제공 api 모듈
 
 ### 폴더 구조 (예시)
-
+```
 src/main/java/com/example/board
 ├── adapter
 │   ├── in
@@ -42,6 +42,7 @@ src/main/java/com/example/board
         ├── out
         └── └─── query
                  └── BoardQueryRepository.java       // 도메인에서 정의한 Repository 인터페이스 (포트)
+```
 
 ### 요청 흐름도
 adapter/web -> application/service -> in/out -> domain/port -> repository
